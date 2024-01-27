@@ -9,7 +9,6 @@ Module Program
         If Console.ReadLine = code Then
             Console.WriteLine("Succes!")
 
-
         End If
 
     End Sub
