@@ -15,7 +15,18 @@ Module Program
         Thread.Sleep(3000)
         Console.Clear()
         Console.WriteLine("Login Successful!")
+        Console.WriteLine("Press 's' to enter settings.")
+        Dim userkey = Console.ReadLine()
+        If userkey = "s" Then
+            Console.Clear()
+            Console.Title = "Settings"
+            Console.Beep()
+            Console.WriteLine("ERROR:")
 
+
+
+
+        End If
 
 
     End Sub
