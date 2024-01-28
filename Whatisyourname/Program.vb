@@ -1,4 +1,4 @@
-Imports System
+Imports System.Net.Mime.MediaTypeNames
 Imports System.Threading
 
 Module Program
@@ -11,16 +11,14 @@ Module Program
         Console.Title = "Login"
         Console.WriteLine("Hi.Please enter name:")
         name = Console.ReadLine()
-        Console.WriteLine("Please Wait...")
-        Thread.Sleep(5000)
         Console.WriteLine($"Welcome back {name}!")
-        Thread.Sleep(3000)
+        Thread.Sleep(1000)
         Console.WriteLine("Please enter password:")
         code = Console.ReadLine()
-        Thread.Sleep(3000)
+        Thread.Sleep(1000)
         Console.Clear()
         Console.WriteLine("Login Successful!")
-        Thread.Sleep(2000)
+        Thread.Sleep(1000)
         Home()
 
     End Sub
@@ -55,6 +53,7 @@ Module Program
         Console.WriteLine("Press 's' to enter settings.")
         Console.WriteLine("Press 'e' to exit.")
         Console.WriteLine("Press 'c' to enter the calculator")
+        Console.WriteLine("Press 'p' to enter your profile")
 
         userkey = Console.ReadLine()
         If userkey = "s" Then
@@ -62,11 +61,16 @@ Module Program
         End If
 
         If userkey = "e" Then
-            Close()
+            shut()
+
         End If
 
         If userkey = "c" Then
             Calc()
+        End If
+
+        If userkey = "p" Then
+            User()
         End If
     End Sub
 
@@ -96,10 +100,21 @@ Module Program
 
     End Sub
 
-    Sub Close()
-        Console.WriteLine("Shutting Down...")
-        Thread.Sleep(2000)
+    Sub User()
         Console.Clear()
+        Console.WriteLine($"Name: {name}")
+        Console.WriteLine($"Password: {code}")
+        Console.WriteLine("(Change password in settings)")
+        Console.WriteLine("Press any key to exit")
+        Console.ReadKey()
+        Home()
+    End Sub
+
+    Sub shut()
+        Console.Clear()
+        Console.WriteLine("Shutting down...")
+        Thread.Sleep(2000)
+        Environment.Exit(0)
     End Sub
 
 
